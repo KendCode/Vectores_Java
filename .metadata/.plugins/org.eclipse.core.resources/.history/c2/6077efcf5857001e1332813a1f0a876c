@@ -1,0 +1,42 @@
+package vectores;
+import java.util.Scanner;
+public class Vector 
+{
+	public void llenarVector(int N, int [] V)
+	{
+		Scanner leer = new Scanner (System.in);
+		for(int i = 0; i < N; i++)
+		{
+			System.out.print(" V[" + i + "] : ");
+			V[i] = leer.nextInt();
+		}
+	}
+	
+	public void llenarVector2(int N, int[] V)
+	{
+		for(int i = 0; i < N; i++)
+			V[i] = (int) (Math.random() * 1000);
+	}
+	
+	public void mostrarVector(int N, int[] V)
+	{
+		System.out.print("\n El vector es: \n");
+		for (int i=0; i < N; i++)
+			System.out.print(V[i] + " | ");
+	}
+	
+	//FUNCION PARA INVERTIR UN NUMEROPARA CAPICUA
+	public static int invertir(int N)
+	{
+	
+		int nuevo = 0, d;
+	
+		while(N > 0)
+		{
+			d = N % 10;
+			N /= 10;
+			nuevo = (nuevo*10)+d;
+		}
+		return nuevo;
+	}
+}
